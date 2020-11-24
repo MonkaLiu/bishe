@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.hua</groupId>
+    <artifactId>rmd</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+        <rmd.version>1.0.0-SNAPSHOT</rmd.version>
+        <common.version>1.0-SNAPSHOT</common.version>
+        <hibernate.hibernate.version>5.1.3.Final</hibernate.hibernate.version>
+        <mysql.version>8.0.20</mysql.version>
+        <apollo.version>1.6.0</apollo.version>
+        <junit.version>4.12</junit.version>
+        <druid.version>1.1.10</druid.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <jodd-http.version>3.7.1</jodd-http.version>
+        <okhttp.version>3.8.1</okhttp.version>
+        <commons-io.version>2.6</commons-io.version>
+        <httpasyncclient.version>4.1</httpasyncclient.version>
+        <httpcore.version>4.4.1</httpcore.version>
+        <bl-sms-service.version>1.2.3-SNAPSHOT</bl-sms-service.version>
+        <bl-mail-service.version>1.0.0</bl-mail-service.version>
+        <app-mall-rabbitMq-service.version>3.0.0-SNAPSHOT</app-mall-rabbitMq-service.version>
+        <mall.kernel.version>3.0.0-SNAPSHOT</mall.kernel.version>
+        <weixin-java-cp.version>3.2.0</weixin-java-cp.version>
+        <hanlp.version>portable-1.7.8</hanlp.version>
+        <micrometer-registry-prometheus.version>1.3.6</micrometer-registry-prometheus.version>
+        <df-skywalking-spring-boot-starter.version>1.0.0-SNAPSHOT</df-skywalking-spring-boot-starter.version>
+        <jasypt-spring-boot-starter.version>3.0.3</jasypt-spring-boot-starter.version>
+        <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <bs-data-center-client.version>1.0.1-SNAPSHOT</bs-data-center-client.version>
+        <bs-sso-client.version>1.0-SNAPSHOT</bs-sso-client.version>
+        <dffl.job.core.version>2.0.1</dffl.job.core.version>
+    </properties>
+    <modules>
+        <module>rmd-backend</module>
+        <module>rmd-core</module>
+        <module>rmd-generator</module>
+        <module>rmd-api</module>
+        <module>rmd-common</module>
+    </modules>
+
+    <dependencyManagement>
+
+        <!--swagger2-->
+        <dependencies>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.hibernate.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+
+            <!-- jasypt 加密工具 -->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
+            </dependency>
+            <!--pageHelper分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jodd</groupId>
+                <artifactId>jodd-http</artifactId>
+                <version>${jodd-http.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpasyncclient</artifactId>
+                <version>${httpasyncclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-logging</artifactId>
+                        <groupId>commons-logging</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dffl</groupId>
+                <artifactId>bl-sms-service</artifactId>
+                <version>${bl-sms-service.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.dffl</groupId>
+                <artifactId>mall.kernel</artifactId>
+                <version>${mall.kernel.version}</version>
+            </dependency>
+
+            <!-- 企业微信 -->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-cp</artifactId>
+                <version>${weixin-java-cp.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <!--正式版本 -->
+        <repository>
+            <!-- nexus服务器中用户名：在settings.xml中<server>的id -->
+            <id>dongfu-release</id>
+            <!-- 这个名称自己定义 -->
+            <name>Release repository</name>
+            <url>http://mvn.psf-dev.com:8081/repository/maven-dongfu/</url>
+        </repository>
+        <!--快照 -->
+        <snapshotRepository>
+            <id>dongfu-snapshot</id>
+            <name>Snapshots repository</name>
+            <url>http://mvn.psf-dev.com:8081/repository/maven-dongfu-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-plugin</id>
+            <name>nexus-plugin</name>
+            <url>http://mvn.psf-dev.com:8081/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- 编译插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <classifier>exec</classifier>
+                    </configuration>
+                    <!--                    <executions>-->
+                    <!--                        <execution>-->
+                    <!--                            <goals>-->
+                    <!--                                <goal>repackage</goal>-->
+                    <!--                            </goals>-->
+                    <!--                        </execution>-->
+                    <!--                    </executions>-->
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+</project>

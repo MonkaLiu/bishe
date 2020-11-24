@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <commentGenerator>
+            <!--<property name="suppressAllComments" value="true"/>-->
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.42.128:3318/enjoy?useUnicode=true"
+                        userId="root"
+                        password="123456">
+            <!-- 设置 useInformationSchema 属性为 true -->
+            <property name="useInformationSchema" value="true" />
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- generate Model -->
+        <!--  实体类生成路径  -->
+        <javaModelGenerator targetPackage="com.hua.shi.rmd.domain.entity.user" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"/>
+        <!--  XML生成路径  -->
+        <sqlMapGenerator targetPackage="com.hua.shi.crm.mapper.persistence" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\resources"/>
+
+        <!--  接口生成路径  -->
+        <javaClientGenerator targetPackage="com.hua.shi.rmd.mapper.user" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"
+                             type="XMLMAPPER"/>
+
+
+        <table tableName="t_user" domainObjectName="UserInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+
+    </context>
+</generatorConfiguration>

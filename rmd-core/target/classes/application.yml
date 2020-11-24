@@ -1,0 +1,8 @@
+# spring 配置
+spring:
+  application:
+    name: rmd
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true

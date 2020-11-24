@@ -1,0 +1,24 @@
+# spring 配置
+spring:
+  application:
+    name: rmd
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: ${driver_name}
+    username: ${jdbc_username}
+    password: ${jdbc_password}
+    type: ${jdbc_type}
+    url: ${jdbc_url}
+
+mybatis:
+  mapper-locations: classpath:com.hua.shi/*Mapper.xml
+  type-aliases-package: com.hua.shi
+
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
