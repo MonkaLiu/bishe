@@ -24,16 +24,16 @@
 
         <!-- generate Model -->
         <!--  实体类生成路径  -->
-        <javaModelGenerator targetPackage="com.hua.shi.rmd.domain.entity.user" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"/>
+        <javaModelGenerator targetPackage="com.hua.shi.rmd.domain.entity.finance" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"/>
         <!--  XML生成路径  -->
         <sqlMapGenerator targetPackage="com.hua.shi.crm.mapper.persistence" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\resources"/>
 
         <!--  接口生成路径  -->
-        <javaClientGenerator targetPackage="com.hua.shi.rmd.mapper.user" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"
+        <javaClientGenerator targetPackage="com.hua.shi.rmd.mapper.finance" targetProject="D:\\huaDongShiFan\\zhitou\\rmd\\rmd-core\\src\\main\\java"
                              type="XMLMAPPER"/>
 
 
-        <table tableName="t_user" domainObjectName="UserInfo">
+        <table tableName="t_finance_info" domainObjectName="FinanceInfo">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
