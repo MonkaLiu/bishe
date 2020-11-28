@@ -23,6 +23,7 @@ public class UserService {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public Map userLogin(@RequestBody UserLogin userLogin) {
+        log.info("请求进来了没 param：{}", userLogin.toString());
         Map map = new HashMap();
         String userName = userLogin.getUserName();
         String passWd = userLogin.getPassWd();
