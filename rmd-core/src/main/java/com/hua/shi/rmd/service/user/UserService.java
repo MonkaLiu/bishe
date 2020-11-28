@@ -3,12 +3,16 @@ package com.hua.shi.rmd.service.user;
 import com.hua.shi.rmd.domain.entity.user.UserInfo;
 import com.hua.shi.rmd.dto.request.UserLogin;
 import com.hua.shi.rmd.mapper.user.UserInfoMapper;
+import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
+@Api(value = "执行计划模块", tags = {"执行计划模块"} )
 @RestController
 @RequestMapping("/security")
 public class UserService {
