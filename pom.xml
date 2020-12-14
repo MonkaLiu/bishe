@@ -44,7 +44,6 @@
         <pagehelper-spring-boot-starter.version>1.2.5</pagehelper-spring-boot-starter.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <bs-data-center-client.version>1.0.1-SNAPSHOT</bs-data-center-client.version>
-        <bs-sso-client.version>1.0-SNAPSHOT</bs-sso-client.version>
         <dffl.job.core.version>2.0.1</dffl.job.core.version>
     </properties>
     <modules>
