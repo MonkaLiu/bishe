@@ -102,4 +102,7 @@ public interface GroupInfoMapper {
      * @mbg.generated Sun Nov 29 13:40:06 CST 2020
      */
     int updateByPrimaryKey(GroupInfo record);
+
+
+    List<GroupInfo>  getPrdGroupTmpSMAll(@Param("groupId") String groupId);
 }

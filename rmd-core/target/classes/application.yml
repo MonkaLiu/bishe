@@ -21,7 +21,7 @@ spring:
         prefer-agent-address: true
 
 server:
-  port: 8088
+  port: 8089
   servlet:
     context-path: /rmd
 

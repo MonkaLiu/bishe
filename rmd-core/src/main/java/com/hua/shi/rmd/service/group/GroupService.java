@@ -1,23 +1,26 @@
 package com.hua.shi.rmd.service.group;
 
+import com.hua.shi.rmd.domain.entity.group.GroupBasic;
 import com.hua.shi.rmd.domain.entity.group.GroupInfo;
 import com.hua.shi.rmd.domain.entity.group.GroupInfoExample;
 import com.hua.shi.rmd.dto.response.Group;
 import com.hua.shi.rmd.enums.RiskLevelEnum;
+import com.hua.shi.rmd.mapper.group.GroupBasicMapper;
 import com.hua.shi.rmd.mapper.group.GroupInfoMapper;
 import com.hua.shi.rmd.util.MyDateUtil;
+import com.hua.shi.rmd.vo.BasicGroupVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Api(value = "组合管理类", tags = {"组合管理类模块"})
@@ -27,6 +30,8 @@ public class GroupService {
 
     @Resource
     private GroupInfoMapper groupInfoMapper;
+
+
 
     @RequestMapping(value = "/selectGroupInfo", method = RequestMethod.GET)
     @ResponseBody
@@ -50,5 +55,8 @@ public class GroupService {
         }
         return list;
     }
+
+
+
 
 }

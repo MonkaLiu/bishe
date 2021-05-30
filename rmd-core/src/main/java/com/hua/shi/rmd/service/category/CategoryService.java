@@ -2,15 +2,15 @@ package com.hua.shi.rmd.service.category;
 
 import com.hua.shi.rmd.domain.entity.category.CategoryInfo;
 import com.hua.shi.rmd.domain.entity.category.CategoryInfoExample;
+import com.hua.shi.rmd.domain.entity.group.GroupInfo;
 import com.hua.shi.rmd.dto.response.Category;
 import com.hua.shi.rmd.mapper.category.CategoryInfoMapper;
+import com.hua.shi.rmd.mapper.group.GroupInfoMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,6 +25,9 @@ public class CategoryService {
 
     @Resource
     private CategoryInfoMapper categoryInfoMapper;
+
+    @Resource
+    private GroupInfoMapper groupInfoMapper;
 
     @RequestMapping(value = "/getCategoryAssetInfo")
     @ResponseBody
@@ -50,5 +53,6 @@ public class CategoryService {
         }
         return  categoryList;
     }
+
 
 }
