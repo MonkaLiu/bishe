@@ -9,6 +9,7 @@ import com.hua.shi.rmd.mapper.group.GroupBasicMapper;
 import com.hua.shi.rmd.mapper.group.GroupInfoMapper;
 import com.hua.shi.rmd.util.MyDateUtil;
 import com.hua.shi.rmd.vo.BasicGroupVo;
+import com.hua.shi.rmd.vo.GroupInfoVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -55,7 +56,6 @@ public class GroupService {
         }
         return list;
     }
-
 
 
 
